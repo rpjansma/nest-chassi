@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { HttpModule } from '@nestjs/axios';
 import { EconomicsService } from './service/economics.service';
+import { InfraModule } from 'src/infra/infra.module';
 
 @Module({
-  imports: [HttpModule],
+  imports: [InfraModule],
   providers: [EconomicsService],
   exports: [EconomicsService],
 })
