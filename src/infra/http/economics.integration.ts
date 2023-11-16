@@ -45,11 +45,13 @@ export class EconomicsIntegrationImpl {
     initialDate: string,
     finalDate: string,
   ): Observable<AxiosResponse<any>> {
-    return this.httpService
+    const response = this.httpService
       .get(
         `https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json&dataInicial=${initialDate}&dataFinal=${finalDate}`,
       )
       .pipe(map((response) => response));
+    console.log(response);
+    return response;
   }
 
   getPtax(
